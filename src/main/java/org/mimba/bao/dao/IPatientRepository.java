@@ -28,7 +28,7 @@ public interface IPatientRepository extends JpaRepository<Patient, Long> {
 	@Query("select p from Patient p where p.remarques like:mc")
 	public Page<Patient> remarquesPatientParMC(@Param("mc") String mc, Pageable pageable);
 
-	@Query("select p from Patient p where p.personne.id=:id")
-	public Page<Patient> personnePatientParId(@Param("id") Long id, Pageable pageable);
+	@Query("select p from Patient p where p.personne.id=:idPersonne")
+	public Page<Patient> personnePatientParId(@Param("idPersonne") Long idPersonne, Pageable pageable);
 
 }

@@ -66,7 +66,7 @@ public interface IPersonneRepository extends JpaRepository<Personne, Long> {
 	@Query("select p from Personne p where p.email like:mc")
 	public Page<Personne> emailPersonneParMC(@Param("mc") String mc, Pageable pageable);
 
-	@Query("select p from Personne p where p.patient.id=:id")
-	public Page<Personne> patientPersonneParId(@Param("id") Long id, Pageable pageable);
+	@Query("select p from Personne p where p.patient.id=:idPatient")
+	public Page<Personne> patientPersonneParId(@Param("idPatient") Long idPatient, Pageable pageable);
 
 }
